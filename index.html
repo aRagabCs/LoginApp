@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <!--bootstrap-->
+    <link rel="stylesheet" href="../../vendors/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <link href="styles/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script type='text/javascript' src="../../vendors/jquery-3.3.1.min.js"></script>
+    <script type='text/javascript' src="../../vendors/angular/angular.min.js"></script>
+    <script type='text/javascript' src="../../vendors/angular/angular-route.min.js"></script>
+    <script type='text/javascript' src="../../vendors/angular/angular-cookies.min.js"></script>
+
+    
+    <script src="app.js"></script>
+    
+
+
+    <!--<script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-services/authentication.service.js"></script>
+    <script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-services/flash.service.js"></script>-->
+    
+    <!-- Fake user service for demo that uses local storage -->
+    <!--<script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/app-services/user.service.local-storage.js"></script>
+    <script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/home/home.controller.js"></script>
+    <script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/login/login.controller.js"></script>
+    <script src="//cdn.rawgit.com/cornflourblue/angular-registration-login-example/master/register/register.controller.js"></script>-->
+
+
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-﻿<div class="col-md-6 col-md-offset-3">
+﻿<!--<div class="col-md-6 col-md-offset-3">
     <h2>Login</h2>
     <form name="form" ng-submit="vm.login()" role="form">
         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
@@ -13,8 +13,80 @@
         </div>
         <div class="form-actions">
             <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Login</button>
+
             <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
             <a href="#!/register" class="btn btn-link">Register</a>
         </div>
     </form>
+</div>-->
+
+
+<div layout="column" ng-cloak="" class="inputdemoErrors">
+    <h2 class="login text-center">Login</h2>
+    <md-content layout-padding="">
+        <form class="main-form" name="form" ng-submit="vm.login()" role="form">
+            <h4 class="text-center">Using</h4>
+            <ul class="social-networks-login text-center">
+                <li class="social-networks-login-item"><a class="google-login" href="#"><i class="fab fa-google"></i></a></li>
+                <li class="social-networks-login-item"><a class="facebook-login" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="social-networks-login-item"><a  class="microsoft-login" href="#"><i class="fab fa-windows"></i></a></li>
+                
+                <li class="social-networks-login-item"><a class="office-login" href="#"><i class="fab fa-google"></i></a></li>
+                <li class="social-networks-login-item"><a class="opera-login" href="#"><i class="fab fa-windows"></i></a></li>
+            </ul>
+            
+            <div class="splitter">
+                
+            </div>
+            <div class="warning-summary padd-v10" ng-if="flash" ng-bind="flash.message"></div>
+            <ul class="warning-summary" ng-show="form.clientEmail.$touched && form.clientEmail.$error.required || form.password.$touched && form.password.$error.required">
+                <li class="warning-summary-item" ng-show="form.clientEmail.$touched && form.clientEmail.$error.required" class="help-block">E-mail address is required</li>
+                <li class="warning-summary-item" ng-show="form.password.$touched && form.password.$error.required" class="help-block">password is required</li>
+
+            </ul>
+            <md-input-container class="md-block">
+                <label>E-mail address</label>
+                <input required="" type="email" name="clientEmail" ng-model="vm.clientEmail" ng-pattern="/^.+@.+\..+$/">
+                <div ng-messages="form.clientEmail.$error" role="alert">
+                    <div ng-message-exp="['pattern']">
+                        Your e-mail must look like an e-mail address.
+                    </div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Password</label>
+                <input required="" type="password" name="password" ng-model="vm.password" minlength="4">
+
+                <div ng-messages="form.password.$error" role="alert">
+                    <div ng-message-exp="['minlength']">
+                        please enter at least 4 letters or numbers
+                    </div>
+                </div>
+            </md-input-container>
+
+            
+
+            <md-input-container class="md-block">
+                <md-checkbox class="col-sm-10 zero-padd" name="tos" ng-model="project.tos">
+                    Remember me
+                </md-checkbox>
+                <a href="#!/register" class="forgot-password form-links">forgot my password</a>
+            </md-input-container>
+
+    
+            
+            <div>
+                <md-button type="submit" ng-disabled="form.$invalid || vm.dataLoading">Log in</md-button>
+                <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+                
+            </div>
+
+        </form>
+        
+    </md-content>
+    <div class="new-user text-center">New User? <a class="form-links" href="#!/register">Register now for free</a></div>
+
 </div>

@@ -1,2 +1,191 @@
-﻿body {
+﻿body{
+    background-color: #F8F8F8;
+}
+
+.login{
+    margin: 30px auto;
+    color: #0A5A8F;
+    font-weight: 400;
+}
+
+.social-networks-login{
+    list-style: none;
+    padding: 0;
+    margin-top: 1em;
+    position:  relative;
+}
+
+
+.social-networks-login-item{
+    display: inline-block;
+    padding: 0 5px;   
+}
+
+li.social-networks-login-item:nth-child(3){
+    padding-right: 20px;
+    border-right: 1px solid #3333;
+}
+
+ li.social-networks-login-item:nth-child(4) {
+     padding-left: 20px;
+ }
+
+    .social-networks-login-item a {
+        display: inline-block;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        position: relative;
+        color: white;
+        background-color: #DD732D;
+        border: 1px solid transparent;
+        transition: all linear 0.5s;
+    }
+
+    .social-networks-login-item a.facebook-login{
+        background-color: #3B5998;
+    }
+
+    .social-networks-login-item a.google-login{
+        background-color: #DF2F2F;
+    }
+
+    .social-networks-login-item a.microsoft-login{
+        background-color:  #00A1F0;
+    }
+
+        .social-networks-login-item a.facebook-login:hover, .social-networks-login-item a.google-login:hover, .social-networks-login-item a.microsoft-login:hover {
+            background-color: transparent;
+            border: 1px solid #3333;
+        }
+     .social-networks-login-item a.facebook-login:hover{
+        color: #3B5998;
+    }
+
+    .social-networks-login-item a.google-login:hover{
+        color: #DF2F2F;
+    }
+
+    .social-networks-login-item a.microsoft-login:hover{
+        color: #00A1F0;
+    }
+
+    .social-networks-login-item a .fab{
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        font-size: 35px;
+    }
+
+    .social-networks-login-item a .fa-facebook-f{
+        left: 35%;
+    }
+
+      .splitter{
+        width: 100%;
+        height: 1px;
+        background-color: #3333;
+        margin-top:  30px;
+        position: relative;
+    }
+
+      .splitter:before{
+        content: "or";
+        width: 40px;
+        height: 20px;
+        position: absolute;
+        font-size:  20px;
+        background-color:  white;
+        top: -17px;
+        left: 49%;
+        text-align: center;
+        font-weight: 600;
+        color: #333;
+    }
+
+   .warning-summary {
+       background-color: #FEEAEA;
+       color:  #CD0000;
+       border-left: 10px solid #CD0000;
+       margin: 20px 0;
+       padding-top: 8px;
+       padding-bottom: 8px;
+   }
+
+
+   .form-links {
+    padding: 0;
+    text-decoration: underline;
+}
+
+   .forgot-password{
+        float: right;
+   }
+
+  .new-user{
+      padding: 30px 0 50px 0;
+  }
+    
+md-content.md-default-theme, md-content{
+    background-color: #fff;
+    border: 1px solid #3333;
+    border-radius: 5px;
+}
+
+md-checkbox{
+    padding: 0px;
+}
+
+button.md-button{
+    width: 100%;
+    border: 1px solid;
+    margin: 0;
+    background: #6BB539;
+    color: #fff;
+}
+
+md-input-container .md-placeholder, md-input-container label:not(.md-no-float):not(.md-container-ignore) {
+    -webkit-transform: translate3d(0,6px,0) scale(1);
+    transform: translate3d(0,6px,0) scale(1);
+    position: relative;
+    color: #333;
+}
+
+md-input-container.md-default-theme:not(.md-input-focused):not(.md-input-invalid) label.md-required:after, md-input-container:not(.md-input-focused):not(.md-input-invalid) label.md-required:after{
+    color: #333;
+}
+
+md-checkbox.md-default-theme:not(.md-checked) .md-icon, md-checkbox:not(.md-checked) .md-icon{
+    border-color: #3333;
+    border-width: 1px;
+    border-radius: 3px;
+}
+
+md-input-container{
+    margin: 0;
+}
+
+md-input-container .md-errors-spacer{
+    min-height: 0;
+}
+
+md-input-container.md-input-focused .md-input, md-input-container.md-input-resized .md-input, md-input-container .md-input.ng-invalid.ng-dirty, md-input-container .md-input{
+    border-width: 1px;
+}
+
+md-checkbox .md-label{
+    margin-bottom: 3px;
+}
+
+md-input-container{
+    margin-top: 10px;
+}
+
+.zero-padd{
+    padding: 0px;
+}
+
+.padd-v10{
+    padding-right: 10px;
+    padding-left: 10px;
 }

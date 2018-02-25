@@ -20,7 +20,7 @@
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
             $timeout(function () {
-                var response;
+                var response;                
                 UserService.GetByclientEmail(clientEmail)
                     .then(function (user) {
                         if (user !== null && user.password === password) {

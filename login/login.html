@@ -16,51 +16,51 @@
                 
             </div>
             <div class="padd-v10" ng-class="{ 'alert': flash, 'success-message': flash.type === 'success', 'warning-summary': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-            <ul class="warning-summary" ng-show="form.clientEmail.$touched && form.clientEmail.$error.required || form.password.$touched && form.password.$error.required">
-                <li class="warning-summary-item" ng-show="form.clientEmail.$touched && form.clientEmail.$error.required" class="help-block">E-mail address is required</li>
-                <li class="warning-summary-item" ng-show="form.password.$touched && form.password.$error.required" class="help-block">password is required</li>
-
-            </ul>
-            <md-input-container class="md-block">
-                <label>E-mail address</label>
-                <input required="" type="email" name="clientEmail" ng-model="vm.clientEmail" ng-pattern="/^.+@.+\..+$/">
-                <div ng-messages="form.clientEmail.$error" role="alert">
-                    <div ng-message-exp="['pattern']">
-                        Your e-mail must look like an e-mail address.
-                    </div>
-                </div>
-            </md-input-container>
-
-            <md-input-container class="md-block">
-                <label>Password</label>
-                <input required="" type="password" name="password" ng-model="vm.password" minlength="4">
-
-                <div ng-messages="form.password.$error" role="alert">
-                    <div ng-message-exp="['minlength']">
-                        please enter at least 4 letters or numbers
-                    </div>
-                </div>
-            </md-input-container>
-
             
+                <ul class="warning-summary" ng-show="form.clientEmail.$touched && form.clientEmail.$error.required || form.password.$touched && form.password.$error.required">
+                    <li class="warning-summary-item help-block" ng-show="form.clientEmail.$touched && form.clientEmail.$error.required">E-mail address is required</li>
+                    <li class="warning-summary-item help-block" ng-show="form.password.$touched && form.password.$error.required">password is required</li>
 
-            <md-input-container class="md-block">
-                <md-checkbox class="col-sm-10 zero-padd" name="tos" ng-model="project.tos">
-                    Remember me
-                </md-checkbox>
-                <a href="#!/register" class="forgot-password form-links">forgot my password</a>
-            </md-input-container>
+                </ul>
+                <md-input-container class="md-block">
+                    <label>E-mail address</label>
+                    <input required="" type="email" name="clientEmail" ng-model="vm.clientEmail" ng-pattern="/^.+@.+\..+$/">
+                    <div ng-messages="form.clientEmail.$error" role="alert">
+                        <div ng-message-exp="['pattern']">
+                            Your e-mail must look like an e-mail address.
+                        </div>
+                    </div>
+                </md-input-container>
 
-    
-            
-            <div>
-                <md-button type="submit" ng-disabled="form.$invalid || vm.dataLoading">Log in</md-button>
-                <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                <md-input-container class="md-block">
+                    <label>Password</label>
+                    <input required="" type="password" name="password" ng-model="vm.password" minlength="4">
 
-                
-            </div>
+                    <div ng-messages="form.password.$error" role="alert">
+                        <div ng-message-exp="['minlength']">
+                            please enter at least 4 letters or numbers
+                        </div>
+                    </div>
+                </md-input-container>
 
-        </form>
+
+
+                <md-input-container class="md-block">
+                    <md-checkbox class="col-sm-10 zero-padd" name="tos" ng-model="project.tos">
+                        Remember me
+                    </md-checkbox>
+                    <a href="#!/register" class="forgot-password form-links">forgot my password</a>
+                </md-input-container>
+
+
+
+                <div>
+                    <md-button type="submit" ng-disabled="vm.dataLoading">Log in</md-button>
+                    <img ng-if="vm.dataLoading" src="../images/loading_spinner.gif" width="50" />
+                    
+                </div>
+
+</form>
         
     </md-content>
     <div class="new-user text-center">New User? <a class="form-links" href="#!/register">Register now for free</a></div>

@@ -153,6 +153,10 @@ button.md-button{
     color: #fff;
 }
 
+button.md-button:hover {
+    color: #333;
+}
+
 md-input-container .md-placeholder, md-input-container label:not(.md-no-float):not(.md-container-ignore) {
     -webkit-transform: translate3d(0,6px,0) scale(1);
     transform: translate3d(0,6px,0) scale(1);

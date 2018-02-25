@@ -4,179 +4,20 @@
     <title></title>
     <meta charset="utf-8" />
     <!--bootstrap-->
-    <link rel="stylesheet" href="vendors/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <link href="vendors/bootstrap-4.0.0/bootstrap.min.css" rel="stylesheet" />
     <!--font awesome-->
-    
-
     <link href="vendors/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" />
-
-
-
-
-
     <!--angularJS material-->
     <link href="vendors/angular material/angular-material.min.css" rel="stylesheet" />
     <link href="styles/styles.css" rel="stylesheet" />
     
 </head>
 <body>
-
-    
-        <div class="container">
-            
-                <!--<div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>-->
-                <div ng-view></div>
-            
-        </div>
+    <div class="container">
+            <div ng-view></div>
+    </div>
     
     
-    <!--<div layout-padding layout="column" ng-cloak="">
-        <md-card>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">User Form</span>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <form name="userForm" novalidate>
-                    <div layout="column">
-                        <md-input-container>
-                            <label>Name</label>
-                            <input type="text" name="name" ng-model="user.name" required>
-                            <div ng-messages="userForm.name.$error">
-                                <div ng-message="required">
-                                    You name is required.
-                                </div>
-                            </div>
-                        </md-input-container>
-                        <md-input-container>
-                            <label>Username</label>
-                            <input type="text" name="username" ng-model="user.username" minlength="3" maxlength="8">
-                            <div ng-messages="userForm.username.$error">
-                                <div ng-message="minlength">Username is too short.</div>
-                                <div ng-message="maxlength">Username is too long.</div>
-                            </div>
-                        </md-input-container>
-                        <md-input-container>
-                            <label>Email</label>
-                            <input type="email" name="email" ng-model="user.email">
-                            <div ng-messages="userForm.email.$error">
-                                <div ng-message="userForm.email.$invalid">
-                                    Enter a valid email.
-                                </div>
-                            </div>
-                        </md-input-container>
-                    </div>
-                </form>
-                <md-card-content>
-                    <md-card-actions layout="row" layout-align="end center">
-                        <md-button ng-click="submitForm()" class="md-raised md-primary">Submit</md-button>
-                    </md-card-actions>
-        </md-card>
-        <md-card>
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">Form</span>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <td>ERROR: {{userForm.$error}}</td>
-                        </tr>
-                        <tr>
-                            <td ng-class="{ success: userForm.$valid, danger: userForm.$invalid }">Valid</td>
-                        </tr>
-                        <tr>
-                            <td ng-class="{ success: userForm.$pristine, danger: !userForm.$pristine }">Pristine</td>
-                        </tr>
-                        <tr>
-                            <td ng-class="{ success: userForm.$dirty }">Dirty</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </md-card-content>
-        </md-card>
-        <div layout="row" layout-padding>
-            <md-card flex>
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">Name</span>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td ng-class="{ success: userForm.name.$valid, danger: userForm.name.$invalid }">Valid</td>
-                            </tr>
-                            <tr>
-                                <td ng-class="{ success: userForm.name.$pristine, danger: !userForm.name.$pristine }">Pristine</td>
-                            </tr>
-                            <tr>
-                                <td ng-class="{ success: userForm.name.$dirty }">Dirty</td>
-                            </tr>
-                            <tr>
-                                <td ng-class="{ success: userForm.name.$touched }">Touched</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </md-card-content>
-            </md-card>
-            <md-card flex>
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">Username</span>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td ng-class="{ success: userForm.username.$valid, danger: userForm.username.$invalid }">Valid</td>
-                            </tr>
-                            <tr>
-                                <td ng-class="{ success: userForm.username.$pristine, danger: !userForm.username.$pristine }">Pristine</td>
-                            </tr>
-                            <tr>
-                                <td ng-class="{ success: userForm.username.$dirty }">Dirty</td>
-                            </tr>
-                            <tr>
-                                <td ng-class="{ success: userForm.username.$touched }">Touched</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </md-card-content>
-            </md-card>
-            <md-card flex>
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">Email</span>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td ng-class="{ success: userForm.email.$valid, danger: userForm.email.$invalid }">Valid</td>
-                            </tr>
-                            <tr>
-                                <td ng-class="{ success: userForm.email.$pristine, danger: !userForm.email.$pristine }">Pristine</td>
-                            </tr>
-                            <tr>
-                                <td ng-class="{ success: userForm.email.$dirty }">Dirty</td>
-                            </tr>
-                            <tr>
-                                <td ng-class="{ success: userForm.email.$touched }">Touched</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </md-card-content>
-            </md-card>
-        </div>
-
-    </div>-->
 
 
    

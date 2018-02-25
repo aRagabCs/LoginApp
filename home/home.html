@@ -3,8 +3,8 @@
 <h3>All registered users:</h3>
 <ul>
     <li ng-repeat="user in vm.allUsers">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a ng-click="vm.deleteUser(user.id)">Delete</a>
+        ({{user.firstName}} {{user.lastName}}) - {{user.clientEmail}} 
+        - <a class="form-links" ng-click="vm.deleteUser(user.id)" href="">Delete</a>
     </li>
 </ul>
 <p>&nbsp;</p>

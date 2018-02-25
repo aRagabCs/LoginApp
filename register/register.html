@@ -1,6 +1,6 @@
-﻿<div class="col-md-6 col-md-offset-3">
-    <h2>Register</h2>
-    <form name="form" ng-submit="vm.register()" role="form">
+﻿
+    
+    <!--<form name="form" ng-submit="vm.register()" role="form">
         <div class="form-group" ng-class="{ 'has-error': form.firstName.$touched && form.firstName.$error.required }">
             <label for="username">First name</label>
             <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
@@ -26,15 +26,18 @@
             <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
             <a href="#!/login" class="btn btn-link">Cancel</a>
         </div>
-    </form>
+    </form>-->
 
-
+<div layout="column" ng-cloak="" class="inputdemoErrors">
+    <h2 class="login text-center">Register</h2>
     <md-content layout-padding="">
         <form class="main-form" name="form" ng-submit="vm.register()" role="form">
-            
+
             <div class="warning-summary padd-v10" ng-if="flash" ng-bind="flash.message"></div>
-            <ul class="warning-summary" ng-show="form.clientEmail.$touched && form.clientEmail.$error.required || form.password.$touched && form.password.$error.required">
-                <li class="warning-summary-item help-block" ng-show="form.clientEmail.$touched && form.clientEmail.$error.required" >E-mail address is required</li>
+            <ul class="warning-summary" ng-show="form.firstName.$touched && form.firstName.$error.required || form.lastName.$touched && form.lastName.$error.required || form.clientEmail.$touched && form.clientEmail.$error.required || form.password.$touched && form.password.$error.required">
+                <li class="warning-summary-item help-block" ng-show="form.firstName.$touched && form.firstName.$error.required">first name is required</li>
+                <li class="warning-summary-item help-block" ng-show="form.lastName.$touched && form.lastName.$error.required">last name is required</li>
+                <li class="warning-summary-item help-block" ng-show="form.clientEmail.$touched && form.clientEmail.$error.required">E-mail address is required</li>
                 <li class="warning-summary-item help-block" ng-show="form.password.$touched && form.password.$error.required">password is required</li>
 
             </ul>
@@ -47,7 +50,6 @@
                     </div>
                 </div>
             </md-input-container>
-
             <md-input-container class="md-block">
                 <label>Last Name</label>
                 <input required="" name="lastName" ng-model="vm.user.lastName">
@@ -57,7 +59,6 @@
                     </div>
                 </div>
             </md-input-container>
-
             <md-input-container class="md-block">
                 <label>E-mail address</label>
                 <input required="" type="email" name="clientEmail" ng-model="vm.user.clientEmail" ng-pattern="/^.+@.+\..+$/">
@@ -70,7 +71,6 @@
                     </div>
                 </div>
             </md-input-container>
-
             <md-input-container class="md-block">
                 <label>Password</label>
                 <input required="" type="password" name="password" ng-model="vm.user.password" minlength="4">
@@ -79,17 +79,13 @@
                     <div ng-message-exp="['minlength']">
                         please enter at least 4 letters or numbers
                     </div>
+                    <div ng-message-exp="['required']">
+                        Password is required
+                    </div>
                 </div>
             </md-input-container>
-
-            
-
-            
-
-
-
             <div>
-                <md-button type="submit" ng-disabled="form.$invalid || vm.dataLoading">Log in</md-button>
+                <md-button type="submit" ng-disabled="form.$invalid || vm.dataLoading">Register</md-button>
                 <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
 
 
@@ -98,5 +94,5 @@
         </form>
 
     </md-content>
-
+    <div class="new-user text-center">Have an account? <a class="form-links" href="#!/login">navigate to login page</a></div>
 </div>

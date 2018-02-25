@@ -39,7 +39,7 @@
             <div class="splitter">
                 
             </div>
-            <div class="warning-summary padd-v10" ng-if="flash" ng-bind="flash.message"></div>
+            <div class="padd-v10" ng-class="{ 'alert': flash, 'success-message': flash.type === 'success', 'warning-summary': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
             <ul class="warning-summary" ng-show="form.clientEmail.$touched && form.clientEmail.$error.required || form.password.$touched && form.password.$error.required">
                 <li class="warning-summary-item" ng-show="form.clientEmail.$touched && form.clientEmail.$error.required" class="help-block">E-mail address is required</li>
                 <li class="warning-summary-item" ng-show="form.password.$touched && form.password.$error.required" class="help-block">password is required</li>
